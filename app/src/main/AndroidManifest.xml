@@ -13,9 +13,13 @@
         android:theme="@style/Theme.IELTSExamPrep"
         tools:targetApi="31">
         <activity
+            android:name=".ReadingPassageMultipleChoiceEachPara"
+            android:exported="false" />
+        <activity
             android:name=".ReadingPassagesMultipleChoice"
             android:exported="false" />
-        <activity android:name=".ReadingMainPage"
+        <activity
+            android:name=".ReadingMainPage"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
