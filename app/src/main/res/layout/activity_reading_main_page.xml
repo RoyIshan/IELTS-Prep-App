@@ -13,4 +13,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Practice Paragraph - Multiple Choice" />
+
+    <Button
+        android:id="@+id/mh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Practice Passage - Match Headings" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Practice Passage - completing sentences" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="summary completion" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="True/False/Not Given" />
 </LinearLayout>
