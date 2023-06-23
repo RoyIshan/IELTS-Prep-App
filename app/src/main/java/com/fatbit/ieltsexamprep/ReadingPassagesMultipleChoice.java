@@ -1,5 +1,6 @@
 package com.fatbit.ieltsexamprep;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -9,10 +10,19 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
+
 public class ReadingPassagesMultipleChoice extends AppCompatActivity {
 
     ListView listView;
     ArrayAdapter<String> adapter;
+    FirebaseFirestore db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,11 +30,27 @@ public class ReadingPassagesMultipleChoice extends AppCompatActivity {
 
         listView = findViewById(R.id.listview);
 
+        db = FirebaseFirestore.getInstance();
         // Create an ArrayAdapter with sample data
-        String[] data = {"Passage 1", "Passage 2", "Passage 3", "Passage 4", "Passage 5"};
+        ArrayList<String> data = new ArrayList<>();
 
         adapter = new ArrayAdapter<>(this, R.layout.listview_adapter, R.id.textView, data);
 
+        db.collection("Passages Multiple Choice")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                data.add(document.getString("Name"));
+                                listView.setAdapter(adapter);
+                            }
+                        } else {
+                            Toast.makeText(ReadingPassagesMultipleChoice.this,"Ni chal ra",Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
         // Set the adapter to the ListView
         listView.setAdapter(adapter);
 
