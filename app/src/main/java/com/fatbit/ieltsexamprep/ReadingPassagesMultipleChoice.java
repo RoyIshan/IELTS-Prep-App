@@ -3,6 +3,7 @@ package com.fatbit.ieltsexamprep;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -58,6 +59,9 @@ public class ReadingPassagesMultipleChoice extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String selectedItem = adapter.getItem(position);
+                Intent intent = new Intent(ReadingPassagesMultipleChoice.this,ReadingPassageMultipleChoiceEachPara.class);
+                intent.putExtra("paraNo",selectedItem);
+                startActivity(intent);
                 Toast.makeText(ReadingPassagesMultipleChoice.this, selectedItem + " clicked", Toast.LENGTH_SHORT).show();
             }
         });
