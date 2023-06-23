@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "723011268305",
+    "project_id": "ielts-exam-prep-ef8c7",
+    "storage_bucket": "ielts-exam-prep-ef8c7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:723011268305:android:fc70b1ea13b591fcf15ff0",
+        "android_client_info": {
+          "package_name": "com.fatbit.ieltsexamprep"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "723011268305-710pglg1dlgrjlnq8mstaipqlkv74v4c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsOfbcBVQbJVpXT654YVUXTPpMOTmd5m0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "723011268305-710pglg1dlgrjlnq8mstaipqlkv74v4c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
