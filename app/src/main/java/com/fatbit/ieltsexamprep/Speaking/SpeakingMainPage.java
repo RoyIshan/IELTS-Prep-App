@@ -7,7 +7,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.fatbit.ieltsexamprep.R;
-import com.fatbit.ieltsexamprep.Speaking.SpeakingPart1Topics;
+import com.fatbit.ieltsexamprep.Speaking.Part1.SpeakingPart1Topics;
 
 public class SpeakingMainPage extends AppCompatActivity {
 

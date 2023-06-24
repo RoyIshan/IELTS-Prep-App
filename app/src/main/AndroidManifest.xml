@@ -13,7 +13,8 @@
         android:theme="@style/Theme.IELTSExamPrep"
         tools:targetApi="31">
         <activity android:name=".Speaking.SpeakingMainPage" />
-        <activity android:name=".Speaking.SpeakingPart1Topics" />
+        <activity android:name=".Speaking.Part1.SpeakingPart1Topics" />
+        <activity android:name=".Speaking.Part1.SpeakingPart1EachContent" />
         <activity
             android:name=".ReadingPassageMatchHeadingEachPara"
             android:exported="false" />
