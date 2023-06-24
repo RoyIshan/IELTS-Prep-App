@@ -19,7 +19,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
-public class ReadingPassagesMatchHeadings extends AppCompatActivity {
+public class ReadingMatchHeadingsTopics extends AppCompatActivity {
 
     ListView listView;
     ArrayAdapter<String> adapter;
@@ -48,7 +48,7 @@ public class ReadingPassagesMatchHeadings extends AppCompatActivity {
                                 listView.setAdapter(adapter);
                             }
                         } else {
-                            Toast.makeText(ReadingPassagesMatchHeadings.this,"Ni chal ra",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ReadingMatchHeadingsTopics.this,"Ni chal ra",Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -59,10 +59,10 @@ public class ReadingPassagesMatchHeadings extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String selectedItem = adapter.getItem(position);
-                Intent intent = new Intent(ReadingPassagesMatchHeadings.this,ReadingPassageMatchHeadingEachPara.class);
+                Intent intent = new Intent(ReadingMatchHeadingsTopics.this,ReadingPassageMatchHeadingEachPara.class);
                 intent.putExtra("paraNo",selectedItem);
                 startActivity(intent);
-                Toast.makeText(ReadingPassagesMatchHeadings.this, selectedItem + " clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ReadingMatchHeadingsTopics.this, selectedItem + " clicked", Toast.LENGTH_SHORT).show();
             }
         });
     }

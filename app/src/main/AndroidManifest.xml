@@ -12,17 +12,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IELTSExamPrep"
         tools:targetApi="31">
+        <activity android:name=".Speaking.SpeakingMainPage" />
+        <activity android:name=".Speaking.SpeakingPart1Topics" />
         <activity
             android:name=".ReadingPassageMatchHeadingEachPara"
             android:exported="false" />
         <activity
-            android:name=".ReadingPassagesMatchHeadings"
+            android:name=".ReadingMatchHeadingsTopics"
             android:exported="false" />
         <activity
-            android:name=".ReadingPassageMultipleChoiceEachPara"
+            android:name=".ReadingMCQEachPara"
             android:exported="false" />
         <activity
-            android:name=".ReadingPassagesMultipleChoice"
+            android:name=".ReadingMCQTopics"
             android:exported="false" />
         <activity
             android:name=".ReadingMainPage"

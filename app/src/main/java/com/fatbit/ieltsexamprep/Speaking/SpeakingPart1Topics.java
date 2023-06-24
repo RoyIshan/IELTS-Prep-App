@@ -1,7 +1,4 @@
-package com.fatbit.ieltsexamprep;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+package com.fatbit.ieltsexamprep.Speaking;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +8,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.fatbit.ieltsexamprep.R;
+import com.fatbit.ieltsexamprep.ReadingMCQEachPara;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -19,7 +21,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
-public class ReadingPassagesMultipleChoice extends AppCompatActivity {
+public class SpeakingPart1Topics extends AppCompatActivity {
 
     ListView listView;
     ArrayAdapter<String> adapter;
@@ -27,7 +29,7 @@ public class ReadingPassagesMultipleChoice extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reading_passages_multiple_choice);
+        setContentView(R.layout.speaking_part1_activity);
 
         listView = findViewById(R.id.listview);
 
@@ -37,18 +39,19 @@ public class ReadingPassagesMultipleChoice extends AppCompatActivity {
 
         adapter = new ArrayAdapter<>(this, R.layout.listview_adapter, R.id.textView, data);
 
-        db.collection("Passages Multiple Choice")
+        db.collection("Reading Part1 Topics")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                data.add(document.getString("Name"));
+                                //data.add(document.getString("Name"));
+                                data.add(document.getId());
                                 listView.setAdapter(adapter);
                             }
                         } else {
-                            Toast.makeText(ReadingPassagesMultipleChoice.this,"Ni chal ra",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SpeakingPart1Topics.this,"Ni chal ra",Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -59,11 +62,12 @@ public class ReadingPassagesMultipleChoice extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String selectedItem = adapter.getItem(position);
-                Intent intent = new Intent(ReadingPassagesMultipleChoice.this,ReadingPassageMultipleChoiceEachPara.class);
+                Intent intent = new Intent(SpeakingPart1Topics.this, ReadingMCQEachPara.class);
                 intent.putExtra("paraNo",selectedItem);
                 startActivity(intent);
-                Toast.makeText(ReadingPassagesMultipleChoice.this, selectedItem + " clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SpeakingPart1Topics.this, selectedItem + " clicked", Toast.LENGTH_SHORT).show();
             }
         });
     }
+
 }
