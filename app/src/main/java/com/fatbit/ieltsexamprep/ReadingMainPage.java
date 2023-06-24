@@ -20,14 +20,14 @@ public class ReadingMainPage extends AppCompatActivity {
         multipleChoice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ReadingMainPage.this,ReadingPassagesMultipleChoice.class));
+                startActivity(new Intent(ReadingMainPage.this, ReadingMCQTopics.class));
             }
         });
 
         matchHeading.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ReadingMainPage.this,ReadingPassagesMatchHeadings.class));
+                startActivity(new Intent(ReadingMainPage.this, ReadingMatchHeadingsTopics.class));
 
             }
         });

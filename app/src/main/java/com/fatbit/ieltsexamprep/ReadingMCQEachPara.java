@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -15,7 +14,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-public class ReadingPassageMultipleChoiceEachPara extends AppCompatActivity {
+public class ReadingMCQEachPara extends AppCompatActivity {
 
     TextView passage,q1,q2,q3,q4,q5,ansView;
     FirebaseFirestore db;
