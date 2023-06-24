@@ -1,4 +1,4 @@
-package com.fatbit.ieltsexamprep.Speaking;
+package com.fatbit.ieltsexamprep.Speaking.Part1;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -62,7 +62,7 @@ public class SpeakingPart1Topics extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String selectedItem = adapter.getItem(position);
-                Intent intent = new Intent(SpeakingPart1Topics.this, ReadingMCQEachPara.class);
+                Intent intent = new Intent(SpeakingPart1Topics.this, SpeakingPart1EachContent.class);
                 intent.putExtra("paraNo",selectedItem);
                 startActivity(intent);
                 Toast.makeText(SpeakingPart1Topics.this, selectedItem + " clicked", Toast.LENGTH_SHORT).show();
