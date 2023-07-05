@@ -1,4 +1,4 @@
-package com.fatbit.ieltsexamprep;
+package com.fatbit.ieltsexamprep.Reading;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,9 +7,11 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.fatbit.ieltsexamprep.R;
+
 public class ReadingMainPage extends AppCompatActivity {
 
-    Button multipleChoice,matchHeading;
+    Button multipleChoice,matchHeading,trueFalseNotGiven;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,6 +19,7 @@ public class ReadingMainPage extends AppCompatActivity {
 
         multipleChoice = findViewById(R.id.mc);
         matchHeading = findViewById(R.id.mh);
+        trueFalseNotGiven =findViewById(R.id.tfng);
         multipleChoice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,5 +34,14 @@ public class ReadingMainPage extends AppCompatActivity {
 
             }
         });
+
+        trueFalseNotGiven.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ReadingMainPage.this, ReadingTrueFalseNotGiven.class));
+
+            }
+        });
+
     }
 }

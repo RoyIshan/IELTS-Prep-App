@@ -6,6 +6,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.fatbit.ieltsexamprep.Reading.ReadingMainPage;
 import com.fatbit.ieltsexamprep.Speaking.SpeakingMainPage;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         reading = findViewById(R.id.reading);
         writing = findViewById(R.id.writing);
 
-        reading.setOnClickListener(v -> startActivity(new Intent(MainActivity.this,ReadingMainPage.class)));
+        reading.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ReadingMainPage.class)));
 
         speaking.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, SpeakingMainPage.class)));
     }

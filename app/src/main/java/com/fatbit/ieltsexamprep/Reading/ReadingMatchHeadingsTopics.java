@@ -1,4 +1,4 @@
-package com.fatbit.ieltsexamprep;
+package com.fatbit.ieltsexamprep.Reading;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.fatbit.ieltsexamprep.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -59,7 +60,7 @@ public class ReadingMatchHeadingsTopics extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String selectedItem = adapter.getItem(position);
-                Intent intent = new Intent(ReadingMatchHeadingsTopics.this,ReadingPassageMatchHeadingEachPara.class);
+                Intent intent = new Intent(ReadingMatchHeadingsTopics.this, ReadingPassageMatchHeadingEachPara.class);
                 intent.putExtra("paraNo",selectedItem);
                 startActivity(intent);
                 Toast.makeText(ReadingMatchHeadingsTopics.this, selectedItem + " clicked", Toast.LENGTH_SHORT).show();
