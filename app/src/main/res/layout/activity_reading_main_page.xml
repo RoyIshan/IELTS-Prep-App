@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".ReadingMainPage">
+    tools:context=".Reading.ReadingMainPage">
 
     <Button
         android:id="@+id/mc"
@@ -33,7 +33,7 @@
         android:text="summary completion" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/tfng"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="True/False/Not Given" />
