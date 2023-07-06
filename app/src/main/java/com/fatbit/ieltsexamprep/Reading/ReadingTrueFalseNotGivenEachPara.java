@@ -20,6 +20,7 @@ public class ReadingTrueFalseNotGivenEachPara extends AppCompatActivity {
     FirebaseFirestore db;
     String paraNo;
     Button ans;
+    boolean check;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,9 +31,10 @@ public class ReadingTrueFalseNotGivenEachPara extends AppCompatActivity {
         heading = findViewById(R.id.heading);
         ansView = findViewById(R.id.ansView);
         ans = findViewById(R.id.ans);
+        check = true;
 
         db = FirebaseFirestore.getInstance();
-        db.collection("Passages Match Heading")
+        db.collection("Passages True False Not Given")
                 .whereEqualTo("Name",paraNo)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -41,7 +43,7 @@ public class ReadingTrueFalseNotGivenEachPara extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 passage.setText(document.getString("Passage").replace("\\n", "\n"));
-                                heading.setText(document.getString("Heading").replace("\\n", "\n"));
+                                heading.setText(document.getString("Question").replace("\\n", "\n"));
                             }
                         } else {
 
@@ -51,21 +53,31 @@ public class ReadingTrueFalseNotGivenEachPara extends AppCompatActivity {
         ans.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                db.collection("Passages Match Heading")
-                        .whereEqualTo("Name",paraNo)
-                        .get()
-                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                            @Override
-                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                                if (task.isSuccessful()) {
-                                    for (QueryDocumentSnapshot document : task.getResult()) {
-                                        ansView.setText(document.getString("Answer").replace("\\n", "\n"));
-                                    }
-                                } else {
+                if(check == true)
+                {
+                    check = false;
+                    ans.setText("Hide Answers");
+                    db.collection("Passages True False Not Given")
+                            .whereEqualTo("Name",paraNo)
+                            .get()
+                            .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                    if (task.isSuccessful()) {
+                                        for (QueryDocumentSnapshot document : task.getResult()) {
+                                            ansView.setText(document.getString("Answer").replace("\\n", "\n"));
+                                        }
+                                    } else {
 
+                                    }
                                 }
-                            }
-                        });
+                            });
+                }
+                else {
+                    check = true;
+                    ans.setText("Show Answers");
+                    ansView.setText("");
+                }
             }
         });
     }

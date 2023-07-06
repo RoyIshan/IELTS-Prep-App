@@ -38,7 +38,7 @@ public class ReadingTrueFalseNotGiven extends AppCompatActivity {
 
         adapter = new ArrayAdapter<>(this, R.layout.listview_adapter, R.id.textView, data);
 
-        db.collection("Passages Multiple Choice")
+        db.collection("Passages True False Not Given")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
