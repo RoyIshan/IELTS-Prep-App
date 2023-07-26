@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Reading.ReadingMatchHeadingsTopics">
+    tools:context=".Reading.ReadingSentanceCompletion">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Match Heading"
+        android:text="Passages"
         android:textSize="34sp" />
 
 

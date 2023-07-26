@@ -11,7 +11,7 @@ import com.fatbit.ieltsexamprep.R;
 
 public class ReadingMainPage extends AppCompatActivity {
 
-    Button multipleChoice,matchHeading,trueFalseNotGiven;
+    Button multipleChoice,matchHeading,trueFalseNotGiven,summaryCompletion,sentanceCompletion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +20,8 @@ public class ReadingMainPage extends AppCompatActivity {
         multipleChoice = findViewById(R.id.mc);
         matchHeading = findViewById(R.id.mh);
         trueFalseNotGiven =findViewById(R.id.tfng);
+        summaryCompletion = findViewById(R.id.smt);
+        sentanceCompletion =findViewById(R.id.stc);
         multipleChoice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -34,11 +36,22 @@ public class ReadingMainPage extends AppCompatActivity {
 
             }
         });
-
+        sentanceCompletion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ReadingMainPage.this,ReadingSentanceCompletion.class));
+            }
+        });
+        summaryCompletion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ReadingMainPage.this,ReadingSummaryCompletion.class));
+            }
+        });
         trueFalseNotGiven.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ReadingMainPage.this, ReadingTrueFalseNotGiven.class));
+                startActivity(new Intent(ReadingMainPage.this, ReadingSummaryCompletion.class));
 
             }
         });
