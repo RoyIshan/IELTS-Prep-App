@@ -21,13 +21,13 @@
         android:text="Practice Passage - Match Headings" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/stc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Practice Passage - completing sentences" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/smt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="summary completion" />

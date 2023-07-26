@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Reading.ReadingPassageMatchHeadingEachPara">
+    tools:context=".Reading.ReadingSummaryCompletionEachPara">
 
 
     <ScrollView
@@ -38,7 +38,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:text="Heading"
+                android:text="Questions"
                 android:textSize="30sp" />
 
             <TextView
